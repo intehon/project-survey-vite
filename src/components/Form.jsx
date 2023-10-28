@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Card } from './Card'
 import { FavoriteColor } from './FavoriteColor'
 import { Number } from './Number'
-import { DreamDestination } from './DreamDestionation'
+import { DreamDestination } from './DreamDestination'
 import { Symbol } from './Symbol'
 import { GrantedWish } from './GrantedWish'
 import { ZodiacSign } from './ZodiacSign'
@@ -28,7 +28,7 @@ export const Form = () => {
 
     //Function to click on the next and prev step in form
     const nextStep = () => {
-        if (currentStep < 6) setCurrentStep(currentStep + 1)
+        if (currentStep < 7) setCurrentStep(currentStep + 1)
         }
     const prevStep = () => {
         if (currentStep > 1) setCurrentStep(currentStep - 1)
@@ -66,7 +66,7 @@ export const Form = () => {
 
         <div>
             {currentStep > 1 && <button onClick={prevStep}>Back</button>}
-            {currentStep < 6 ? ( 
+            {currentStep < 7 ? ( 
                 <button onClick={nextStep}>Next</button>
                 ) : (
                 <button onClick={submitForm}>Submit</button>
