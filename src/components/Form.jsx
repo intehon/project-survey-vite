@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Card } from './Card'
 import { FavoriteColor } from './FavoriteColor'
 import { Number } from './Number'
-import { PlaceToVisit } from './PlaceToVisit'
-import { SpiritAnimal } from './SpiritAnimal'
-import { Superpower } from './Superpower'
+import { DreamDestination } from './DreamDestionation'
+import { Symbol } from './Symbol'
+import { GrantedWish } from './GrantedWish'
 import { ZodiacSign } from './ZodiacSign'
 
 export const Form = () => {
@@ -12,11 +12,11 @@ export const Form = () => {
     const [formData, setFormData] = useState({
         favoriteColor: '',
         number: '',
-        spiritAnimal: '',
+        symbol: '',
         zodiacSign: '',
         card: '',
-        placeToVisit: '',
-        superpower: ''
+        dreamDestination: '',
+        grantedWish: ''
     })
     //State to keep track of current step
     const [currentStep, setCurrentStep] = useState(1)
@@ -37,13 +37,13 @@ export const Form = () => {
     //Function to submit form
     const submitForm = () => {
         const formattedData = `
-        card: ${formData.card}
         favoriteColor: ${formData.favoriteColor}
         number: ${formData.number}
-        placeToVisit: ${formData.placeToVisit}
-        spiritAnimal: ${formData.spiritAnimal}
-        superpower: ${formData.superpower}
+        symbol: ${formData.symbol}
         zodiacSign: ${formData.zodiacSign}
+        card: ${formData.card}
+        dreamDestination: ${formData.dreamDestination}
+        grantedWish: ${formData.grantedWish}
         `
         alert(formattedData)
     }
@@ -54,15 +54,15 @@ export const Form = () => {
 
             {currentStep === 2 && <Number value={formData.number} updateFormData={updateFormData} />}
             
-            {currentStep === 3 && <SpiritAnimal value={formData.spiritAnimal} updateFormData={updateFormData} />}
+            {currentStep === 3 && <Symbol value={formData.symbol} updateFormData={updateFormData} />}
 
             {currentStep === 4 && <ZodiacSign value={formData.zodiacSign} updateFormData={updateFormData} />}
 
             {currentStep === 5 && <Card value={formData.card} updateFormData={updateFormData} />}
 
-            {currentStep === 6 && <PlaceToVisit value={formData.placeToVisit} updateFormData={updateFormData} />}
+            {currentStep === 6 && <DreamDestination value={formData.dreamDestination} updateFormData={updateFormData} />}
 
-            {currentStep === 7 && <Superpower value={formData.superpower} updateFormData={updateFormData} />}
+            {currentStep === 7 && <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />}
 
         <div>
             {currentStep > 1 && <button onClick={prevStep}>Back</button>}

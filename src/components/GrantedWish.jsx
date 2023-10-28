@@ -1,4 +1,4 @@
-export const PlaceToVisit = () => {
+export const GrantedWish = () => {
     return (
         <div>
             

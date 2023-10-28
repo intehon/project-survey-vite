@@ -1,4 +1,4 @@
-export const SpiritAnimal = () => {
+export const Symbol = () => {
     return (
         <div>
             

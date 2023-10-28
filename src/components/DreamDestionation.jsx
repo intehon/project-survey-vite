@@ -1,4 +1,4 @@
-export const Superpower = () => {
+export const DreamDestination = () => {
     return (
         <div>
             
