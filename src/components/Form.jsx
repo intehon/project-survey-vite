@@ -10,13 +10,13 @@ import { ZodiacSign } from './ZodiacSign'
 export const Form = () => {
     //State to store form data
     const [formData, setFormData] = useState({
-        card: '',
         favoriteColor: '',
         number: '',
-        placeToVisit: '',
         spiritAnimal: '',
-        superpower: '',
-        zodiacSign: ''
+        zodiacSign: '',
+        card: '',
+        placeToVisit: '',
+        superpower: ''
     })
     //State to keep track of current step
     const [currentStep, setCurrentStep] = useState(1)
@@ -37,14 +37,15 @@ export const Form = () => {
     //Function to submit form
     const submitForm = () => {
         const formattedData = `
-        Card: ${formData.card}
-        Favorite Color: ${formData.favoriteColor}
-        Pick a Number: ${formData.number}
-        Place to Visit: ${formData.placeToVisit}
-        Spirit Animal: ${formData.spiritAnimal}
-        Superpower: ${formData.superpower}
-        Zodiac Sign: ${formData.zodiacSign}
+        card: ${formData.card}
+        favoriteColor: ${formData.favoriteColor}
+        number: ${formData.number}
+        placeToVisit: ${formData.placeToVisit}
+        spiritAnimal: ${formData.spiritAnimal}
+        superpower: ${formData.superpower}
+        zodiacSign: ${formData.zodiacSign}
         `
+        alert(formattedData)
     }
 
     return (
