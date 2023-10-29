@@ -3,7 +3,7 @@ export const Number = ({ value, updateFormData }) => {
     return (
         <div>
             <label htmlFor='numberChoice'>Pick a number between 1 and 10:
-               <div> 
+               <div className='inputContainer'> 
                     <select 
                     id="numberChoice"
                     value={value} 

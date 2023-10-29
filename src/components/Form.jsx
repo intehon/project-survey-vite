@@ -45,7 +45,7 @@ export const Form = () => {
     }
 
     return (
-        <div className="formContainer">
+        <div className={`formContainer ${isSubmitted ? 'summary' : ''}`}>
             {currentStep === 1 && !isSubmitted && (
                 <div className={`formStep ${currentStep === 1 ? 'active' : ''}`}>
                 <FavoriteColor value={formData.favoriteColor} updateFormData={updateFormData}/>
@@ -83,29 +83,18 @@ export const Form = () => {
                     <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />
                 </div>
             )}            
-            {/* {currentStep === 2 && !isSubmitted && <Number value={formData.number} updateFormData={updateFormData} />}
-            
-            {currentStep === 3 && !isSubmitted && <Symbol value={formData.symbol} updateFormData={updateFormData} />}
-
-            {currentStep === 4 && !isSubmitted && <ZodiacSign value={formData.zodiacSign} updateFormData={updateFormData} />}
-
-            {currentStep === 5 && !isSubmitted && <Card value={formData.card} updateFormData={updateFormData} />}
-
-            {currentStep === 6 && !isSubmitted && <DreamDestination value={formData.dreamDestination} updateFormData={updateFormData} />}
-
-            {currentStep === 7 && !isSubmitted && <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />} */}
 
             {/*When submitted; show summary component*/}
             {isSubmitted && (
-                <Summary
-                    favoriteColor={formData.favoriteColor}
-                    number={formData.number}
-                    symbol={formData.symbol}
-                    zodiacSign={formData.zodiacSign}
-                    card={formData.card}
-                    dreamDestination={formData.dreamDestination}
-                    grantedWish={formData.grantedWish}
-                />
+                    <Summary
+                        favoriteColor={formData.favoriteColor}
+                        number={formData.number}
+                        symbol={formData.symbol}
+                        zodiacSign={formData.zodiacSign}
+                        card={formData.card}
+                        dreamDestination={formData.dreamDestination}
+                        grantedWish={formData.grantedWish}
+                    />
             )}
 
             {/*Show buttons only if not submitted*/}
@@ -113,23 +102,11 @@ export const Form = () => {
             <div className="buttonContainer">
                 {currentStep > 1 && <button className='button' onClick={prevStep}>Back</button>}
                 {currentStep < 7 ? ( 
-                    <button className="button" onClick={nextStep}>Next</button>
+                    <button type='button' className="button" onClick={nextStep}>Next</button>
                     ) : (
                     <button className='button' onClick={submitForm}>Submit</button>
                     )}
             </div>)}
-            
-            {/*Show button only if submitted*/}
-            {isSubmitted && (
-                <div className='summary'>
-                    <button
-                    type="button"
-                    className="button"
-                    onClick={() => window.location.reload()}>
-                        Do a new reading 🔮
-                    </button>
-                </div>
-            )}
         </div>
     )
 }

@@ -3,7 +3,7 @@ export const ZodiacSign = ({ value, updateFormData }) => {
     return (
         <div>
             <label>What's your zodiac sign?
-                <div>
+                <div className='inputContainer'>
                 <select value={value} onChange={sign}>
                     <option value="" disabled>Select your zodiac sign</option>
                     <option value="aries">Aries</option>

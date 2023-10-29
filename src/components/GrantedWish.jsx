@@ -4,7 +4,7 @@ export const GrantedWish = ({ value, updateFormData }) => {
     return (
         <div>
             <label htmlFor='grantedWish'>If you could have any one wish granted, what would it be?
-                <div>
+                <div className='inputContainer'>
                 <textarea
                 id="grantedWish"
                 name="grantedWish"
