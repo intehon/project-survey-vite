@@ -6,6 +6,7 @@ import { DreamDestination } from './DreamDestination'
 import { Symbol } from './Symbol'
 import { GrantedWish } from './GrantedWish'
 import { ZodiacSign } from './ZodiacSign'
+import { Summary } from './Summary';
 
 export const Form = () => {
     //State to store form data
@@ -20,6 +21,9 @@ export const Form = () => {
     })
     //State to keep track of current step
     const [currentStep, setCurrentStep] = useState(1)
+
+    //State to track wether form has been submitted or not
+    const [isSubmitted, setIsSubmitted] = useState(false)
 
     //Function to update form data
     const updateFormData = (field, value) => {
@@ -36,43 +40,46 @@ export const Form = () => {
 
     //Function to submit form
     const submitForm = () => {
-        const formattedData = `
-        favoriteColor: ${formData.favoriteColor}
-        number: ${formData.number}
-        symbol: ${formData.symbol}
-        zodiacSign: ${formData.zodiacSign}
-        card: ${formData.card}
-        dreamDestination: ${formData.dreamDestination}
-        grantedWish: ${formData.grantedWish}
-        `
-        alert(formattedData)
+        setIsSubmitted(true)
     }
 
     return (
         <div>
-            {currentStep === 1 && <FavoriteColor value={formData.favoriteColor} updateFormData={updateFormData}/>}
+            {currentStep === 1 && !isSubmitted && <FavoriteColor value={formData.favoriteColor} updateFormData={updateFormData}/>}
 
-            {currentStep === 2 && <Number value={formData.number} updateFormData={updateFormData} />}
+            {currentStep === 2 && !isSubmitted && <Number value={formData.number} updateFormData={updateFormData} />}
             
-            {currentStep === 3 && <Symbol value={formData.symbol} updateFormData={updateFormData} />}
+            {currentStep === 3 && !isSubmitted && <Symbol value={formData.symbol} updateFormData={updateFormData} />}
 
-            {currentStep === 4 && <ZodiacSign value={formData.zodiacSign} updateFormData={updateFormData} />}
+            {currentStep === 4 && !isSubmitted && <ZodiacSign value={formData.zodiacSign} updateFormData={updateFormData} />}
 
-            {currentStep === 5 && <Card value={formData.card} updateFormData={updateFormData} />}
+            {currentStep === 5 && !isSubmitted && <Card value={formData.card} updateFormData={updateFormData} />}
 
-            {currentStep === 6 && <DreamDestination value={formData.dreamDestination} updateFormData={updateFormData} />}
+            {currentStep === 6 && !isSubmitted && <DreamDestination value={formData.dreamDestination} updateFormData={updateFormData} />}
 
-            {currentStep === 7 && <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />}
+            {currentStep === 7 && !isSubmitted && <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />}
 
-        <div>
-            {currentStep > 1 && <button onClick={prevStep}>Back</button>}
-            {currentStep < 7 ? ( 
-                <button onClick={nextStep}>Next</button>
-                ) : (
-                <button onClick={submitForm}>Submit</button>
-                )}
-        </div>
+            {isSubmitted && (
+                <Summary
+                    favoriteColor={formData.favoriteColor}
+                    number={formData.number}
+                    symbol={formData.symbol}
+                    zodiacSign={formData.zodiacSign}
+                    card={formData.card}
+                    dreamDestination={formData.dreamDestination}
+                    grantedWish={formData.grantedWish}
+                />
+            )}
 
+            {!isSubmitted && (
+            <div>
+                {currentStep > 1 && <button onClick={prevStep}>Back</button>}
+                {currentStep < 7 ? ( 
+                    <button onClick={nextStep}>Next</button>
+                    ) : (
+                    <button onClick={submitForm}>Submit</button>
+                    )}
+            </div>)}
         </div>
     )
 }
