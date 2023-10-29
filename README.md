@@ -10,8 +10,9 @@ This week we will be practicing React state and controlled forms by making a Typ
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by building the Form component, marking out where the other components where supposed to go later on. Then, one by one, continued to build up the app.
+If I had more time I would definitely go for the advanced stretch goals, but this week I just ran out of time.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://week-5-fortune-teller.netlify.app/
