@@ -3,14 +3,17 @@ export const GrantedWish = ({ value, updateFormData }) => {
 
     return (
         <div>
-            <label>If you could have any one wish granted, what would it be?
+            <label htmlFor='grantedWish'>If you could have any one wish granted, what would it be?
+                <div>
                 <textarea
+                id="grantedWish"
                 name="grantedWish"
                 rows={3}
                 cols={30} 
                 placeholder='My one wish is...'
                 value={value} 
                 onChange={wish} />
+                </div>
             </label>
         </div>
     )

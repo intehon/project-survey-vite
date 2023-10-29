@@ -3,8 +3,15 @@ export const FavoriteColor = ({ value, updateFormData }) => {
 
     return (
         <div>
-            <label>What's your favorite color?</label>
-            <input type="text" value={value} onChange={color} />
+            <label htmlFor='favoriteColor'>What's your favorite color?</label>
+            <div>
+                <input 
+                type="text"
+                id="favoriteColor" 
+                value={value} 
+                onChange={color} 
+                />
+            </div>
         </div>
     )
 }

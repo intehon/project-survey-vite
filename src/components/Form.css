@@ -1,0 +1,82 @@
+/* Overall container */
+.formContainer {
+    background-color: #333;
+    color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Styling for the form steps */
+.formStep {
+    display: none;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+
+select, input, textarea {
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px; 
+}
+
+.formStep.active {
+    display: block;
+}
+
+/* Button styling */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #777;
+}
+
+/* Summary styling */
+.summary {
+    background-color: #444;
+    padding: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+span {
+    font-style: italic;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 10px;
+    }
+}
