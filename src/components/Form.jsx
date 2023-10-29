@@ -71,6 +71,7 @@ export const Form = () => {
                 />
             )}
 
+            {/*Show buttons only if not submitted*/}
             {!isSubmitted && (
             <div>
                 {currentStep > 1 && <button onClick={prevStep}>Back</button>}
@@ -80,6 +81,17 @@ export const Form = () => {
                     <button onClick={submitForm}>Submit</button>
                     )}
             </div>)}
+
+            {isSubmitted && (
+                <div>
+                    <button
+                    type="button"
+                    className="button"
+                    onClick={() => window.location.reload()}>
+                        Do a new reading 🔮
+                    </button>
+                </div>
+            )}
         </div>
     )
 }
