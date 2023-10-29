@@ -6,6 +6,7 @@ import { DreamDestination } from './DreamDestination'
 import { Symbol } from './Symbol'
 import { GrantedWish } from './GrantedWish'
 import { ZodiacSign } from './ZodiacSign'
+import { MagicPotion } from './MagicPotion'
 import { Summary } from './Summary'
 import './Form.css'
 
@@ -18,8 +19,9 @@ export const Form = () => {
         zodiacSign: '',
         card: '',
         dreamDestination: '',
-        grantedWish: ''
-    })
+        grantedWish: '',
+        potion: 0
+        })
     //State to keep track of current step
     const [currentStep, setCurrentStep] = useState(1)
 
@@ -33,7 +35,7 @@ export const Form = () => {
 
     //Function to click on the next and prev step in form
     const nextStep = () => {
-        if (currentStep < 7) setCurrentStep(currentStep + 1)
+        if (currentStep < 8) setCurrentStep(currentStep + 1)
         }
     const prevStep = () => {
         if (currentStep > 1) setCurrentStep(currentStep - 1)
@@ -82,7 +84,12 @@ export const Form = () => {
                 <div className={`formStep ${currentStep === 7 ? 'active' : ''}`}>
                     <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />
                 </div>
-            )}            
+            )}   
+            {currentStep === 8 && !isSubmitted && (
+                <div className={`formStep ${currentStep === 8 ? 'active' : ''}`}>
+                    <MagicPotion value={formData.potion} updateFormData={updateFormData} />
+                </div>
+            )}         
 
             {/*When submitted; show summary component*/}
             {isSubmitted && (
@@ -94,6 +101,7 @@ export const Form = () => {
                         card={formData.card}
                         dreamDestination={formData.dreamDestination}
                         grantedWish={formData.grantedWish}
+                        potion={formData.potion}
                     />
             )}
 
@@ -101,7 +109,7 @@ export const Form = () => {
             {!isSubmitted && (
             <div className="buttonContainer">
                 {currentStep > 1 && <button className='button' onClick={prevStep}>Back</button>}
-                {currentStep < 7 ? ( 
+                {currentStep < 8 ? ( 
                     <button type='button' className="button" onClick={nextStep}>Next</button>
                     ) : (
                     <button className='button' onClick={submitForm}>Submit</button>

@@ -13,7 +13,7 @@ body {
 .formContainer {
     background-color: #f3f3f3;
     color: #333;
-    padding: 20px;
+    padding: 15px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ body {
 
 /* Styling for the form steps */
 .formStep {
-    padding: 20px;
+    padding: 5px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -49,12 +49,17 @@ label {
     display: inline-block;
     margin-bottom: 10px;
     text-align: center;
+    margin-right: 10px;
 }
 
 select, input, textarea {
     border-radius: 5px;
     padding: 5px;
     margin-top: 10px;
+}
+
+span {
+    font-style: italic;
 }
 
 /* Styling for the Summary component */
