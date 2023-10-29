@@ -7,8 +7,8 @@ export const Card = ({ value, updateFormData }) => {
                 <label>
                     <input 
                     type="radio"
-                    value="spades"
-                    checked={value === "spades"}
+                    value="♠️"
+                    checked={value === "♠️"}
                     onChange={card}
                     />
                     ♠️
@@ -16,8 +16,8 @@ export const Card = ({ value, updateFormData }) => {
                 <label>
                     <input 
                     type="radio"
-                    value="hearts"
-                    checked={value === "hearts"}
+                    value="♥️"
+                    checked={value === "♥️"}
                     onChange={card}
                     />
                     ♥️
@@ -25,8 +25,8 @@ export const Card = ({ value, updateFormData }) => {
                 <label>
                     <input 
                     type="radio"
-                    value="diamonds"
-                    checked={value === "diamonds"}
+                    value="♦️"
+                    checked={value === "♦️"}
                     onChange={card}
                     />
                     ♦️
@@ -34,8 +34,8 @@ export const Card = ({ value, updateFormData }) => {
                 <label>
                 <input 
                 type="radio"
-                value="clubs"
-                checked={value === "clubs"}
+                value="♣️"
+                checked={value === "♣️"}
                 onChange={card}
                 />
                 ♣️

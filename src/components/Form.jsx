@@ -6,7 +6,7 @@ import { DreamDestination } from './DreamDestination'
 import { Symbol } from './Symbol'
 import { GrantedWish } from './GrantedWish'
 import { ZodiacSign } from './ZodiacSign'
-import { Summary } from './Summary';
+import { Summary } from './Summary'
 
 export const Form = () => {
     //State to store form data
@@ -59,6 +59,7 @@ export const Form = () => {
 
             {currentStep === 7 && !isSubmitted && <GrantedWish value={formData.grantedWish} updateFormData={updateFormData} />}
 
+            {/*When submitted; show summary component*/}
             {isSubmitted && (
                 <Summary
                     favoriteColor={formData.favoriteColor}
@@ -81,7 +82,8 @@ export const Form = () => {
                     <button onClick={submitForm}>Submit</button>
                     )}
             </div>)}
-
+            
+            {/*Show button only if submitted*/}
             {isSubmitted && (
                 <div>
                     <button

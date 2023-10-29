@@ -7,8 +7,8 @@ export const Symbol = ({ value, updateFormData }) => {
                 <label>
                 <input 
                 type="radio"
-                value="moon"
-                checked={value === "moon"}
+                value="🌙"
+                checked={value === "🌙"}
                 onChange={symbol}
                 />
                 🌙
@@ -16,8 +16,8 @@ export const Symbol = ({ value, updateFormData }) => {
                 <label>
                 <input 
                 type="radio"
-                value="sun"
-                checked={value === "sun"}
+                value="☀️"
+                checked={value === "☀️"}
                 onChange={symbol}
                 />
                 ☀️
@@ -25,8 +25,8 @@ export const Symbol = ({ value, updateFormData }) => {
                 <label>
                 <input 
                 type="radio"
-                value="star"
-                checked={value === "star"}
+                value="⭐"
+                checked={value === "⭐"}
                 onChange={symbol}
                 />
                 ⭐
@@ -34,8 +34,8 @@ export const Symbol = ({ value, updateFormData }) => {
                 <label>
                 <input 
                 type="radio"
-                value="planet"
-                checked={value === "planet"}
+                value="🪐"
+                checked={value === "🪐"}
                 onChange={symbol}
                 />
                 🪐
