@@ -5,8 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin: 80px;
 }
 
 /* Overall container */
@@ -95,6 +94,10 @@ span {
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     /* Adjust styles for smaller screens */
+    body {
+        margin: 5px;
+    }
+
     .formContainer {
         padding: 10px;
         max-width: 100%;
