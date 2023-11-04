@@ -1,11 +1,15 @@
 /* Center the entire form horizontally and vertically on the webpage */
 body {
-    background-image: url('../assets/blue.jpg');
+    background-image: url('../assets/universe.jpg');
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 80px;
+    margin: 20px; /* Adjust margin for smaller screens */
+    /* Further adjustments for smaller screens if needed */
+    @media (max-width: 768px) {
+        margin: 10px;
+    }
 }
 
 /* Overall container */
@@ -18,6 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
 }
 
 /* Styling for the form steps */
@@ -29,6 +34,10 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    /* Adjust padding and margins for smaller screens */
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
 }
 
 /* Center form input elements within form steps */
@@ -42,6 +51,10 @@ body {
 .inputContainer {
     margin-top: 10px;
     text-align: center;
+    /* Adjust margin-top for smaller screens */
+    @media (max-width: 768px) {
+        margin-top: 5px;
+    }
 }
 
 label {
@@ -49,7 +62,12 @@ label {
     margin-bottom: 10px;
     text-align: center;
     margin-right: 10px;
+    /* Adjust styles for smaller screens */
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
 }
+
 
 select, input, textarea {
     border-radius: 5px;
@@ -68,6 +86,10 @@ span {
     margin: 10px;
     max-width: 400px;
     text-align: center;
+    /* Adjust padding for smaller screens */
+    @media (max-width: 768px) {
+        padding: 10px;
+    }
 }
 
 /* Button styling */

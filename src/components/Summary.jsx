@@ -1,18 +1,14 @@
 export const Summary = ({ favoriteColor, number, symbol, zodiacSign, card, dreamDestination, grantedWish, potion  }) => {
         return (
             <div className='summary'>
-                <p>{favoriteColor} is a reflection of the depths of your soul, a hue that resonates with your innermost desires. The number you've chosen, {number}, holds secrets known only to you. If you delve deep into your being, you'll find that number whispering hidden truths, waiting for your inner observer to uncover.</p>
+                <p>{favoriteColor} reflects your inner desires, {number} whispers hidden truths, {symbol} hints at mysterious forces. Your {zodiacSign} aligns with cosmic rhythms. {card} is your unique mirror. {dreamDestination} is a doorway to self-discovery.</p>
 
-                <p>As for the symbol; {symbol} is a mystical sigil that speaks of the enigmatic forces at play in your life. To fully understand its significance, you must embark on a journey within, seeking the hidden patterns that echo this symbol.</p>
+                <p>Your cherished wish, <span>"{grantedWish}"</span>, awaits you. Explore your heart's depths to manifest your desires. Your path is mysterious, your future captivating.</p>
 
-                <p>Your zodiac sign, {zodiacSign}, aligns with the cosmic rhythm of your existence. The playing card you've drawn, {card}, is a mirror reflecting a mystery only you can decipher. The destination you yearn to visit, {dreamDestination}, is a doorway to self-discovery.</p>
-
-                <p>And as for your one cherished wish, <span>"{grantedWish}"</span>, the universe beckons you to explore the depths of your heart, for therein lies the key to manifesting your most enigmatic desires. Your path is shrouded in mystery, and your future is a captivating tale waiting to be unveiled through your inner exploration.</p>
-
-                <span>However, remember that the number of magic potions you choose to drink, may influence the likelihood of your wish coming true. Each potion may unlock a different aspect of your destiny, so choose wisely. Your journey is a combination of self-discovery and the magic of the universe, and the potions you consume play a role in this cosmic dance.</span>
-
+                <span>Choose magic potions wisely to influence your wish's likelihood. Each potion unlocks destiny aspects. Your journey combines self-discovery and cosmic magic.</span> 
+                
                 <p>Likelihood of wish coming true: {potion}/100</p>
-            
+
                 <button
                 type="button"
                 className="button"
